@@ -19,13 +19,18 @@ public class Characters {
         this.mana = mana;
     }
     
+    public int lightSaberAttack() {
+        int attack = ThreadLocalRandom.current().nextInt(getMinPhysicalAttack(), getMaxPhysicalAttack() + 1);
+        return attack;
+    }
+    
     public int performAttack() {
-        int physicalDmg = ThreadLocalRandom.current().nextInt(minPhysicalAttack, maxPhysicalAttack);
+        int physicalDmg = lightSaberAttack();
         reduceHealth(physicalDmg);
         return physicalDmg;
         /*
         Implement missedAttack?
-        Random number between 1-10, if 1 or 2 attack will miss otherwise successful attack
+        Random number between 1-10, if result is 1 or 2 attack will miss otherwise successful attack
          */
     }
     
