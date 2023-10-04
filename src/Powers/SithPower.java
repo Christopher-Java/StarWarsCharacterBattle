@@ -63,9 +63,31 @@ public class SithPower {
         
     }
     
-    public void forceFocusedRage() {
-        // Increase max health, increase attack dmg and add x amount of health (Only increases stats)
+    public void forceFocusedRage(Characters player) {
+        // Increase attack dmg and add x amount of health
         //Reduce mana if attack is successful
+        //newAttack = int, not double
+        
+        if (powerCost <= player.getMana()) {
+            int newMinAttack = (int) (player.getMinPhysicalAttack() * 1.25);
+            int newMaxAttack = (int) (player.getMaxPhysicalAttack() * 1.25);
+            
+            player.setMinPhysicalAttack(newMinAttack);
+            player.setMaxPhysicalAttack(newMaxAttack);
+            
+            int newHealth = player.getHealth() + powerHeal;
+            int orgHealth = player.getHealth();
+            
+            if (newHealth > orgHealth) {
+                newHealth = orgHealth;
+            }
+            
+            reduceMana(player);
+            player.setHealth(newHealth);
+            
+        } else {
+            System.out.println("Not enough mana to perform Focused rage.");
+        }
         
     }
     
