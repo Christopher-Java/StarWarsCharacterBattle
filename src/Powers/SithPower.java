@@ -66,7 +66,7 @@ public class SithPower {
     public void forceFocusedRage(Characters player) {
         // Increase attack dmg and add x amount of health
         //Reduce mana if attack is successful
-        //newAttack = int, not double
+        //newMinAttack & newMaxAttack = int, not double
         
         if (powerCost <= player.getMana()) {
             int newMinAttack = (int) (player.getMinPhysicalAttack() * 1.25);

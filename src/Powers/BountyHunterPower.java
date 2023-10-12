@@ -1,5 +1,9 @@
 package Powers;
 
+import Characters.Characters;
+
+import java.util.concurrent.ThreadLocalRandom;
+
 public class BountyHunterPower {
     private String name;
     private int powerCost;
@@ -15,12 +19,41 @@ public class BountyHunterPower {
         this.powerHeal = powerHeal;
     }
     
-    public void rocketBlast() {
-        // Attack for x amount of powerdmg
+    public void rocketBlast(Characters player, Characters opponent) {
+        /// Attack for x amount of powerdmg
+        //Reduce mana if attack is successful
+        //Reduce health if attack is successful
+        
+        if (powerCost <= player.getMana()) {
+            int powerDmg = ThreadLocalRandom.current().nextInt(getMinPowerDmg(), getMaxPowerDmg() + 1);
+            reduceHealth(opponent, powerDmg);
+            if (opponent.getHealth() <= 0) {
+                System.out.println("Opponent died. Player wins!");
+            }
+            
+            reduceMana(player);
+            
+        } else {
+            System.out.println("Not enough Mana to perform Rocket blast.");
+        }
     }
     
     public void bullsEye() {
         // Double attackDmg
+    }
+    
+    public void medKit() {
+        //Heal user for x HP
+    }
+    
+    public void reduceMana(Characters character) {
+        int newMana = character.getMana() - powerCost;
+        character.setMana(newMana);
+    }
+    
+    public void reduceHealth(Characters character, int powerDmg) {
+        int newHealth = character.getHealth() - powerDmg;
+        character.setHealth(newHealth);
     }
     
     
