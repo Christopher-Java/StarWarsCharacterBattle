@@ -64,7 +64,7 @@ public class SithPower {
     }
     
     public void forceFocusedRage(Characters player) {
-        // Increase attack dmg and add x amount of health
+        // Increase attack dmg by 25% and add x amount of health
         //Reduce mana if attack is successful
         //newMinAttack & newMaxAttack = int, not double
         

@@ -38,8 +38,19 @@ public class BountyHunterPower {
         }
     }
     
-    public void bullsEye() {
-        // Double attackDmg
+    public void bullsEye(Characters player, Characters opponent) {
+        // BullsEye = normalAttack + 50% physicalDmg
+        //Reduce mana if attack is successful
+        //Reduce health if attack is successful
+        
+        if (powerCost <= player.getMana()) {
+            int bullsEye = (int) (player.normalAttack() * 1.5);
+            reduceHealth(opponent, bullsEye);
+            
+            reduceMana(player);
+        } else {
+            System.out.println("Not enough Mana to perform BullsEye");
+        }
     }
     
     public void medKit() {
