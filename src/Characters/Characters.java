@@ -19,13 +19,13 @@ public class Characters {
         this.mana = mana;
     }
     
-    public int lightSaberAttack() {
+    public int normalAttack() {
         int attack = ThreadLocalRandom.current().nextInt(getMinPhysicalAttack(), getMaxPhysicalAttack() + 1);
         return attack;
     }
     
     public int performAttack() {
-        int physicalDmg = lightSaberAttack();
+        int physicalDmg = normalAttack();
         reduceHealth(physicalDmg);
         return physicalDmg;
         /*
