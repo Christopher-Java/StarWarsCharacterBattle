@@ -53,8 +53,24 @@ public class BountyHunterPower {
         }
     }
     
-    public void medKit() {
-        //Heal user for x HP
+    public void medKit(Characters player) {
+        // Heal user for x HP
+        // New HP shouldnt go beyond original HP
+        
+        if (powerCost <= player.getMana()) {
+            
+            int newHealth = player.getHealth() + powerHeal;
+            int orgHealth = player.getHealth();
+            
+            if (newHealth > orgHealth) {
+                newHealth = orgHealth;
+            }
+            player.setHealth(newHealth);
+            reduceMana(player);
+            
+        } else {
+            System.out.println("Not enough Mana to perform medKit");
+        }
     }
     
     public void reduceMana(Characters character) {
