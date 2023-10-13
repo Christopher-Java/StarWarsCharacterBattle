@@ -1,6 +1,6 @@
 package Characters.BountyHunters;
 
-import Characters.Characters;
+import Characters.Character;
 import Powers.BountyHunterPower;
 
 public class BobaFett extends BountyHunter {
@@ -14,12 +14,12 @@ public class BobaFett extends BountyHunter {
         performAttack();
     }
     
-    public void rocketBlast(Characters opponent) {
+    public void rocketBlast(Character opponent) {
         BountyHunterPower rocketBlast = new BountyHunterPower("RocketBlast", 30, 25, 35, 0);
         rocketBlast.rocketBlast(this, opponent);
     }
     
-    public void bullsEye(Characters opponent) {
+    public void bullsEye(Character opponent) {
         BountyHunterPower bullsEye = new BountyHunterPower("BullsEye", 45, 0, 0, 0);
         bullsEye.bullsEye(this, opponent);
     }

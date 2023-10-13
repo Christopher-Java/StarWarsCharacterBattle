@@ -1,6 +1,6 @@
 package Characters.Jedi;
 
-import Characters.Characters;
+import Characters.Character;
 import Powers.JediPower;
 
 public class AnakinSkywalker extends Jedi {
@@ -18,7 +18,7 @@ public class AnakinSkywalker extends Jedi {
         forceSpeed.forceSpeed(this);
     }
     
-    public void useForceSuperNova(Characters opponent) {
+    public void useForceSuperNova(Character opponent) {
         JediPower forceSuperNova = new JediPower("Force Supernova", 40, 50, 60, 0);
         forceSuperNova.forceSuperNova(this, opponent);
     }
