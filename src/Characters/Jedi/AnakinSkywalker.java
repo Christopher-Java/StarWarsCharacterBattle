@@ -8,6 +8,11 @@ public class AnakinSkywalker extends Jedi {
         super("Anakin Skywalker", 100, 20, 30, 100);
     }
     
+    public void lightSaberAttack() {
+        //Lightsaber attack
+        performAttack();
+    }
+    
     public void useForceSpeed() {
         JediPower forceSpeed = new JediPower("Force Speed", 30, getMinPhysicalAttack(), getMaxPhysicalAttack(), 0);
         forceSpeed.forceSpeed(this);

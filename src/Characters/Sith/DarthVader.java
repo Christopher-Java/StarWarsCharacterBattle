@@ -11,8 +11,9 @@ public class DarthVader extends Sith {
         super("Darth Vader", 100, 25, 35, 100);
     }
     
-    public void attack(){
+    public void lightSaberAttack(){
         //Lightsaber attack
+        performAttack();
     }
     
     
