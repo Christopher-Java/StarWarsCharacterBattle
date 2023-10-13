@@ -7,8 +7,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Välkommen till Star Wars Character Battle!");
-        System.out.println("Välj vilken karaktär du vill spela som.");
+        System.out.println("*********************************************");
+        System.out.println("*   Welcome to Star Wars Character Battle   *");
+        System.out.println("*********************************************");
+        System.out.println();
+        System.out.println("Choose the character you want to play as : ");
         
         System.out.println("1. Anakin Skywalker");
         System.out.println("2. Darth Vader");
@@ -39,9 +42,11 @@ public class Main {
                     break;
                 
                 default:
-                    System.out.println("Ogiltigt val!");
+                    System.out.println("Invalid option");
             }
         } while (choice < 1 || choice > 3);
+    
+        System.out.println("You chose " + playerName);
         
     }
 }
