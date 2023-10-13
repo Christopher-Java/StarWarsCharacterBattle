@@ -1,9 +1,7 @@
 package Characters.Sith;
 
 import Powers.SithPower;
-import Characters.Characters;
-
-import java.util.concurrent.ThreadLocalRandom;
+import Characters.Character;
 
 public class DarthVader extends Sith {
     
@@ -17,13 +15,13 @@ public class DarthVader extends Sith {
     }
     
     
-    public void forceLightning(Characters opponent) {
+    public void forceLightning(Character opponent) {
         SithPower forceLightning = new SithPower("Force Lightning", 30, 30, 40, 0);
         forceLightning.forceLightning(this, opponent);
         
     }
     
-    public void forceLifeSteal(Characters opponent) {
+    public void forceLifeSteal(Character opponent) {
     SithPower forceLifeSteal = new SithPower("Life Steal", 30,30,40,0);
     forceLifeSteal.forceLifeSteal(this,opponent);
     }

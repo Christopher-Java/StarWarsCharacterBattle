@@ -1,6 +1,6 @@
 package Powers;
 
-import Characters.Characters;
+import Characters.Character;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,7 +19,7 @@ public class BountyHunterPower {
         this.powerHeal = powerHeal;
     }
     
-    public void rocketBlast(Characters player, Characters opponent) {
+    public void rocketBlast(Character player, Character opponent) {
         /// Attack for x amount of powerdmg
         //Reduce mana if attack is successful
         //Reduce health if attack is successful
@@ -38,7 +38,7 @@ public class BountyHunterPower {
         }
     }
     
-    public void bullsEye(Characters player, Characters opponent) {
+    public void bullsEye(Character player, Character opponent) {
         // BullsEye = normalAttack + 50% physicalDmg
         //Reduce mana if attack is successful
         //Reduce health if attack is successful
@@ -53,7 +53,7 @@ public class BountyHunterPower {
         }
     }
     
-    public void medKit(Characters player) {
+    public void medKit(Character player) {
         // Heal user for x HP
         // New HP shouldnt go beyond original HP
         
@@ -73,12 +73,12 @@ public class BountyHunterPower {
         }
     }
     
-    public void reduceMana(Characters character) {
+    public void reduceMana(Character character) {
         int newMana = character.getMana() - powerCost;
         character.setMana(newMana);
     }
     
-    public void reduceHealth(Characters character, int powerDmg) {
+    public void reduceHealth(Character character, int powerDmg) {
         int newHealth = character.getHealth() - powerDmg;
         character.setHealth(newHealth);
     }

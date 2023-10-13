@@ -1,6 +1,6 @@
 package Powers;
 
-import Characters.Characters;
+import Characters.Character;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,7 +19,7 @@ public class JediPower {
         this.powerHeal = powerHeal;
     }
     
-    public void forceSpeed(Characters player) {
+    public void forceSpeed(Character player) {
         //Physical attack twice in a row if powerCost is less than or equal to mana
         //Reduce mana if attack is successful
         //Reduce health occurs in performAttack()
@@ -35,7 +35,7 @@ public class JediPower {
             System.out.println("Not enough mana to perform Force Speed.");
         }
     }
-    public void forceHeal(Characters player) {
+    public void forceHeal(Character player) {
         // Heal for x amount of health
         // Make sure newHealth doesnt go beyond original health
         
@@ -56,7 +56,7 @@ public class JediPower {
         }
     }
     
-    public void forceSuperNova(Characters player, Characters opponent) {
+    public void forceSuperNova(Character player, Character opponent) {
         //High risk, high reward
         //Deal large amount of damage to the opponent and half(?) as much damage to the user
         if (powerCost <= player.getMana()) {
@@ -81,12 +81,12 @@ public class JediPower {
         }
     }
     
-    public void reduceHealth(Characters character, int powerDmg) {
+    public void reduceHealth(Character character, int powerDmg) {
         int newHealth = character.getHealth() - powerDmg;
         character.setHealth(newHealth);
     }
     
-    public void reduceMana(Characters character) {
+    public void reduceMana(Character character) {
         int newMana = character.getMana() - powerCost;
         character.setMana(newMana);
     }

@@ -1,6 +1,6 @@
 package Powers;
 
-import Characters.Characters;
+import Characters.Character;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,7 +19,7 @@ public class SithPower {
         this.powerHeal = powerHeal;
     }
     
-    public void forceLightning(Characters player, Characters opponent) {
+    public void forceLightning(Character player, Character opponent) {
         // Attack for x amount of powerdmg
         //Reduce mana if attack is successful
         //Reduce health if attack is successful
@@ -38,7 +38,7 @@ public class SithPower {
         
     }
     
-    public void forceLifeSteal(Characters player, Characters opponent) {
+    public void forceLifeSteal(Character player, Character opponent) {
         // Deal x amount of dmg and give to player as health
         // Reduce mana if attack is successful
         // Reduce health if attack is successful
@@ -63,7 +63,7 @@ public class SithPower {
         
     }
     
-    public void forceFocusedRage(Characters player) {
+    public void forceFocusedRage(Character player) {
         // Increase attack dmg by 25% and add x amount of health
         //Reduce mana if attack is successful
         //newMinAttack & newMaxAttack = int, not double
@@ -91,12 +91,12 @@ public class SithPower {
         
     }
     
-    public void reduceMana(Characters character) {
+    public void reduceMana(Character character) {
         int newMana = character.getMana() - powerCost;
         character.setMana(newMana);
     }
     
-    public void reduceHealth(Characters character, int powerDmg) {
+    public void reduceHealth(Character character, int powerDmg) {
         int newHealth = character.getHealth() - powerDmg;
         character.setHealth(newHealth);
     }

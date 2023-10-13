@@ -1,9 +1,8 @@
 package Characters;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Characters {
+public class Character {
     private String name;
     private int health;
     private int minPhysicalAttack;
@@ -11,7 +10,7 @@ public class Characters {
     private int mana;
     
     
-    public Characters(String name, int health, int minPhysicalAttack, int maxPhysicalAttack, int mana) {
+    public Character(String name, int health, int minPhysicalAttack, int maxPhysicalAttack, int mana) {
         this.name = name;
         this.health = health;
         this.minPhysicalAttack = minPhysicalAttack;
