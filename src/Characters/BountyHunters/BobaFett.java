@@ -18,4 +18,9 @@ public class BobaFett extends BountyHunter {
         BountyHunterPower bullsEye = new BountyHunterPower("BullsEye", 45, 0, 0, 0);
         bullsEye.bullsEye(this, opponent);
     }
+    
+    public void medKit(){
+        BountyHunterPower medKit = new BountyHunterPower("MedKit", 25,0,0,30);
+        medKit.medKit(this);
+    }
 }
